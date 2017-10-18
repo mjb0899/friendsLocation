@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="ISO-8859-1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link href="css/master.css" rel="stylesheet" type="text/css">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+      <script>
+         $(function() {
+             $("#tabs").tabs();
+         });
+      </script>
+      <style>
+      </style>
+      <title></title>
+   </head>
+   <body>
+      <div class="top">
+         <div class="top-left">
+            <h2>FIND MY FRIEND</h2>
+         </div>
+         <div class="top-right form-inline">
+            <div class="form-group">
+               <span class="glyphicon glyphicon-user"></span>
+               <label for="idinput">ID:</label> 
+               <input id="idinput"  type="text" class="form-control" required> 
+               <input id="idclick" class="btn btn-default"  type="submit" value="login">
+               <input id="idout" class="btn btn-default"  type="submit" value="Sign Out">
+            </div>
+         </div>
+      </div>
+      <div class="maptab">
+         <div id="tabs">
+            <ul>
+               <li>
+                  <a href="#tabs-1">Friends</a>
+               </li>
+               <li>
+                  <a href="#tabs-2">Subscription</a>
+               </li>
+            </ul>
+            <div id="tabs-1">
+               <div class="form-inline checktab div_border">
+                  <span class="glyphicon glyphicon-globe"></span>
+                  <h4> Check In:</h4>
+                  <hr>
+                  <label>Longitude</label> 
+                  <input name="Longitude" type="text" id="longitude" class="form-control"> 
+                  <label>Latitude</label> 
+                  <input name="Latitude" type="text" id="latitude" class="form-control"> 
+                  <input name="checkin" type="submit" value="update" id="checkin" class="btn btn-default">
+                  <hr>
+               </div>
+               <div class="check_status">
+                  <div class="alert alert-success">
+                     <strong>Success!</strong> Location Updated...
+                  </div>
+               </div>
+               <br>
+               <div class="form-inline checktab div_border">
+                  <h4> Friends Subscribed:</h4>
+                  <hr>
+                  <div id="subscription_div">
+                     <!-- subs div -->
+                  </div>
+                  <button id="refresh_btn" class="btn btn-default">Refresh</button>
+               </div>
+               <div id="map"></div>
+            </div>
+            <div id="tabs-2" >
+               <div class="form-inline checktab">
+                <div class="div_border subs_manager">
+                  <h4>Subscribe To Friends</h4>
+                    </div> 
+                  <hr>
+                  
+                  <input name="" type="text" id="subInput" class="form-control">
+                  <button id="sendSub" class="btn btn-default">send</button>
+             
+                 <div class="div_border subs_manager">  
+                  <h4>Incoming Request</h4>
+                     </div>
+                  <hr>
+                  <div  id="requestdiv">
+                  </div>
+                  <br>
+                  <hr>
+                  <button class="replyRequest btn btn-default"  data-reply="true">Approve</button>
+                  <button class="replyRequest btn btn-default" data-reply="false">Deny</button>
+                  <button class="btn btn-default" id="ref_request" >Refresh</button>
+                  <div class="reqstatus"></div>
+                
+               
+                    <div class="req_status">
+                     <div class="alert alert-success">
+                        <strong>Successful!</strong>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="script/index.js"></script> 
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKRxpdaF1i_vu98C91ztS6zzX1nYRd4nM&callback=initMap"></script>
+   </body>
+</html>
+

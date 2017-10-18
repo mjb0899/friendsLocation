@@ -57,7 +57,7 @@ function getUser(){
 
 			},
 			error: function(e) {
-				alert("Sorry! User Not Found");
+				alert("Sorry! User Not Found.");
 				console.log(e)
 			}
 		});
